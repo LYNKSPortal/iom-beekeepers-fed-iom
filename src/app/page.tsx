@@ -31,7 +31,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-forest-2/60 via-transparent to-transparent" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-14 md:pb-20 landscape:pb-8">
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-28 pb-14 md:pb-20 landscape:pb-8">
           <Reveal>
             <p className="eyebrow text-honey mb-6 landscape:mb-3 flex items-center gap-3">
               <span className="inline-block h-px w-10 bg-honey" />
