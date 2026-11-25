@@ -5,6 +5,12 @@ import { PageHero, Section, SectionHead } from "@/components/page-hero";
 import { Reveal, ImageReveal } from "@/components/motion";
 import { ASSOCIATIONS, IMAGES } from "@/lib/data";
 
+const AREA_IMGS: Record<string, string> = {
+  Ramsey: "/areas/ramsey-area.jpg",
+  Western: "/areas/peel-area.jpg",
+  Southern: "/areas/porterin-area.jpg",
+};
+
 export const metadata: Metadata = {
   alternates: { canonical: "/associations" },
   title: "Local Associations",
@@ -12,7 +18,6 @@ export const metadata: Metadata = {
     "Three local beekeeping associations cover the Isle of Man: Ramsey & District in the north, Western in the centre and west, and Southern District in the south.",
 };
 
-const IMGS = [IMAGES.hills, IMAGES.forest, IMAGES.poppies];
 
 export default function AssociationsPage() {
   return (
@@ -34,7 +39,7 @@ export default function AssociationsPage() {
           {ASSOCIATIONS.map((a, i) => (
             <div key={a.short} className="grid gap-10 lg:grid-cols-12 items-center">
               <div className={`lg:col-span-5 ${i % 2 ? "lg:order-2" : ""}`}>
-                <ImageReveal src={IMGS[i]} alt={`${a.name} area`} ratio="4/3" className="rounded-3xl" />
+                <ImageReveal src={AREA_IMGS[a.short]} alt={`${a.name} area`} ratio="4/3" className="rounded-3xl" />
               </div>
               <div className={`lg:col-span-7 ${i % 2 ? "lg:order-1" : ""}`}>
                 <Reveal>

@@ -4,7 +4,7 @@ import { ArrowRight, Bug, Eye, Ruler, AlertTriangle } from "lucide-react";
 import { PageHero, Section, SectionHead } from "@/components/page-hero";
 import { Reveal, ImageReveal } from "@/components/motion";
 import { Button } from "@/components/ui/button";
-import { IMAGES, POSTS, formatDate } from "@/lib/data";
+import { POSTS, formatDate } from "@/lib/data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/asian-hornets" },
@@ -61,8 +61,8 @@ export default function AsianHornetsPage() {
       </Section>
 
       <section className="relative">
-        <ImageReveal src={IMAGES.forest} alt="Woodland path" className="h-[55vh] min-h-[380px]" />
-        <div className="absolute inset-0 bg-forest-2/65" />
+        <ImageReveal src="/the-yellow-legged-hornet.jpg" alt="The yellow-legged Asian hornet, Vespa velutina" className="h-[55vh] min-h-[380px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-forest-2/85 via-forest-2/55 to-forest-2/30" />
         <div className="absolute inset-0 z-10 flex items-center px-6">
           <div className="mx-auto max-w-7xl w-full text-cream">
             <Reveal>

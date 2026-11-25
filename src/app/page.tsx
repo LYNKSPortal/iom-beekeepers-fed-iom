@@ -208,16 +208,20 @@ export default function Home() {
           {/* Asian hornet */}
           <Link
             href="/asian-hornets"
-            className="group card-lift relative md:col-span-2 overflow-hidden rounded-3xl bg-charcoal text-cream p-7 min-h-[240px] flex flex-col justify-between"
+            className="group card-lift relative md:col-span-2 overflow-hidden rounded-3xl bg-charcoal text-cream min-h-[240px] img-zoom"
           >
-            <div>
-              <p className="eyebrow text-honey mb-3">Vigilance</p>
-              <h3 className="font-display text-2xl leading-tight">The Asian hornet is getting closer.</h3>
-              <p className="mt-3 text-sm text-cream/60">
-                Nests reported as far north as Hull. Learn the signs, your eyes are our best defence.
-              </p>
+            <Image src="/the-yellow-legged-hornet.jpg" alt="The yellow-legged Asian hornet" fill sizes="(max-width:768px) 100vw, 33vw" className="object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/10" />
+            <div className="relative z-10 flex h-full min-h-[240px] flex-col justify-between p-7">
+              <div>
+                <p className="eyebrow text-honey mb-3">Vigilance</p>
+                <h3 className="font-display text-2xl leading-tight">The Asian hornet is getting closer.</h3>
+                <p className="mt-3 text-sm text-cream/70">
+                  Nests reported as far north as Hull. Learn the signs, your eyes are our best defence.
+                </p>
+              </div>
+              <ArrowUpRight className="h-5 w-5 text-honey transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
             </div>
-            <ArrowUpRight className="h-5 w-5 text-honey transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
           </Link>
         </div>
       </Section>
