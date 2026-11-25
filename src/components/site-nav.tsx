@@ -71,7 +71,7 @@ export function SiteNav() {
                 width={3000}
                 height={811}
                 priority
-                className="h-auto w-[170px] sm:w-[300px] transition-opacity duration-300 group-hover:opacity-80"
+                className="h-auto w-[170px] lg:w-[300px] transition-opacity duration-300 group-hover:opacity-80"
               />
             </Link>
 

@@ -63,6 +63,12 @@ body {
   letter-spacing: -0.03em;
   font-weight: 480;
 }
+
+@media (orientation: landscape) and (max-height: 620px) {
+  .display-1 {
+    font-size: clamp(2.4rem, 11vh, 5rem);
+  }
+}
 .display-2 {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6.5vw, 5.5rem);
