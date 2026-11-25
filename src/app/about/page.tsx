@@ -6,6 +6,7 @@ import { Reveal, ImageReveal } from "@/components/motion";
 import { IMAGES, OFFICERS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "About the Federation",
   description:
     "The Isle of Man Beekeepers Federation, affiliated to the BBKA, uniting three local associations and 200 registered beekeepers.",

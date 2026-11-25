@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion";
 import { EVENTS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/events" },
   title: "Events",
   description: "Federation Council meetings, the annual Honey Show & Convention, and association events across the Isle of Man.",
 };

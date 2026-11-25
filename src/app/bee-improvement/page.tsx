@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { IMAGES, POSTS, formatDate } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/bee-improvement" },
   title: "Bee Improvement",
   description:
     "The Manx Bee Improvement Group, breeding calmly from the Island's own stock, generation by generation.",

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/getting-started" },
   title: "Getting Started with Beekeeping",
   description:
     "How to become a beekeeper on the Isle of Man, join your local association, take the winter course, and learn the island's unique rules.",

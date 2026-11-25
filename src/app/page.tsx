@@ -26,15 +26,7 @@ export default function Home() {
       {/* ---------------- HERO ---------------- */}
       <section className="relative min-h-svh flex flex-col justify-end overflow-hidden bg-forest-2 text-cream grain">
         <div className="absolute inset-0">
-          <Image
-            src={IMAGES.hero}
-            alt="A honeybee foraging on a golden flower"
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-center"
-          />
-          <HeroVideo playbackId={MUX_PLAYBACK_ID} poster={IMAGES.hero} />
+          <HeroVideo playbackId={MUX_PLAYBACK_ID} />
           <div className="absolute inset-0 bg-gradient-to-t from-forest-2 via-forest-2/40 to-forest-2/30" />
           <div className="absolute inset-0 bg-gradient-to-r from-forest-2/60 via-transparent to-transparent" />
         </div>

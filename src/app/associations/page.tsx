@@ -6,6 +6,7 @@ import { Reveal, ImageReveal } from "@/components/motion";
 import { ASSOCIATIONS, IMAGES } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/associations" },
   title: "Local Associations",
   description:
     "Three local beekeeping associations cover the Isle of Man: Ramsey & District in the north, Western in the centre and west, and Southern District in the south.",

@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CalendarDays } from "lucide-react";
 import { Reveal } from "@/components/motion";
 import { Section } from "@/components/page-hero";
-import { POSTS, formatDate } from "@/lib/data";
+import { POSTS, SITE, formatDate } from "@/lib/data";
+import { JsonLd, articleLd, breadcrumbLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -13,7 +14,25 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = POSTS.find((p) => p.slug === slug);
-  return post ? { title: post.title, description: post.excerpt } : {};
+  if (!post) return {};
+  const tags = post.categories.map((c) => c.replace(/^category-/, "").replace(/-/g, " "));
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/news/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.excerpt,
+      url: `${SITE.url}/news/${post.slug}`,
+      publishedTime: post.date,
+      modifiedTime: post.date,
+      authors: [SITE.name],
+      tags,
+      images: post.image ? [{ url: post.image, alt: post.title }] : undefined,
+    },
+    twitter: { card: "summary_large_image", title: post.title, description: post.excerpt },
+  };
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,6 +44,16 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
 
   return (
     <>
+      <JsonLd
+        data={[
+          articleLd(post),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "News", path: "/news" },
+            { name: post.title, path: `/news/${post.slug}` },
+          ]),
+        ]}
+      />
       <section className="bg-forest-2 text-cream grain relative px-6 pt-40 pb-20 md:pt-52 md:pb-28">
         <div className="relative z-10 mx-auto max-w-4xl">
           <Reveal>

@@ -8,6 +8,7 @@ import { NewsArchive } from "@/components/news-archive";
 import { POSTS, formatDate } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/news" },
   title: "News",
   description: "The full archive of news and articles from the Isle of Man Beekeepers Federation.",
 };

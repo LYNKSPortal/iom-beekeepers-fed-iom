@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { COURSE_TOPICS, IMAGES, PRACTICAL_TOPICS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/courses" },
   title: "Beekeeping Courses",
   description:
     "The Isle of Man Beekeepers Federation beginners course, seven Wednesday evenings of theory through March and April, plus practical apiary sessions all season.",

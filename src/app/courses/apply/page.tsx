@@ -5,6 +5,7 @@ import { Reveal, ImageReveal } from "@/components/motion";
 import { IMAGES, ASSOCIATIONS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/courses/apply" },
   title: "Course Application",
   description:
     "Apply for the Isle of Man Beekeepers Federation beginners beekeeping course, sign-ups open in October.",

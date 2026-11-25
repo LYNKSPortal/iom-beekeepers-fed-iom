@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { IMAGES, ASSOCIATIONS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/membership" },
   title: "Membership",
   description:
     "Join the Isle of Man Beekeepers Federation through your local association, meetings, apiary visits, the swarm network and the annual Honey Show.",

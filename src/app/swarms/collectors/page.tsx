@@ -4,6 +4,7 @@ import { Reveal } from "@/components/motion";
 import { CollectorDirectory } from "@/components/directory";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/swarms/collectors" },
   title: "Swarm Collectors",
   description:
     "Isle of Man Beekeepers Federation swarm collectors, volunteers covering the North, Central and South areas of the island. Free swarm collection.",

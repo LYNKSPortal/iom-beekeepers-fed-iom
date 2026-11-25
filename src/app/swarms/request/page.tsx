@@ -7,6 +7,7 @@ import { PhoneCall } from "lucide-react";
 import { ASSOCIATIONS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/swarms/request" },
   title: "Request Swarm Collection",
   description:
     "Report a settled honeybee swarm on the Isle of Man. For the fastest response, call your nearest collector directly.",

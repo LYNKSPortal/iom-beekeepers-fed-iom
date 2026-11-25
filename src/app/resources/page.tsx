@@ -6,6 +6,7 @@ import { RESOURCES } from "@/lib/data";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/resources" },
   title: "Resources",
   description: "Useful links and references for Isle of Man beekeepers, BBKA, BIBBA, DEFA registration and more.",
 };

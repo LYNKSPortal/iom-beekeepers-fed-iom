@@ -5,7 +5,8 @@ import { ArrowLeft, ArrowRight, CalendarDays, Clock, MapPin } from "lucide-react
 import { Reveal } from "@/components/motion";
 import { Section } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
-import { EVENTS, formatDate } from "@/lib/data";
+import { EVENTS, SITE, formatDate } from "@/lib/data";
+import { JsonLd, eventLd, breadcrumbLd } from "@/lib/seo";
 
 export function generateStaticParams() {
   return EVENTS.map((e) => ({ slug: e.slug }));
@@ -14,7 +15,19 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const e = EVENTS.find((e) => e.slug === slug);
-  return e ? { title: e.title, description: e.excerpt } : {};
+  if (!e) return {};
+  return {
+    title: e.title,
+    description: e.excerpt,
+    alternates: { canonical: `/events/${e.slug}` },
+    openGraph: {
+      type: "website",
+      title: `${e.title}, ${e.location ?? "Isle of Man"}`,
+      description: e.excerpt,
+      url: `${SITE.url}/events/${e.slug}`,
+    },
+    twitter: { card: "summary_large_image", title: e.title, description: e.excerpt },
+  };
 }
 
 export default async function EventPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -25,6 +38,16 @@ export default async function EventPage({ params }: { params: Promise<{ slug: st
 
   return (
     <>
+      <JsonLd
+        data={[
+          eventLd(event),
+          breadcrumbLd([
+            { name: "Home", path: "/" },
+            { name: "Events", path: "/events" },
+            { name: event.title, path: `/events/${event.slug}` },
+          ]),
+        ]}
+      />
       <section className="bg-forest-2 text-cream grain relative px-6 pt-40 pb-20 md:pt-52 md:pb-28">
         <div className="relative z-10 mx-auto max-w-5xl">
           <Reveal>

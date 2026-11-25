@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion";
 import { REPORTABLE_DISEASES } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/bee-health" },
   title: "Bee Health",
   description:
     "Notifiable bee pests and diseases on the Isle of Man, foulbrood, varroa, tropilaelaps and small hive beetle. Report to DEFA Animal Health on 685844.",

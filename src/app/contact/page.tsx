@@ -7,6 +7,7 @@ import { Reveal } from "@/components/motion";
 import { ASSOCIATIONS, OFFICERS, SITE } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description:
     "Contact the Isle of Man Beekeepers Federation, officers, association secretaries, phone and email. For swarms, please use the swarm pages.",

@@ -9,7 +9,8 @@ export function HeroVideo({ playbackId, poster }: { playbackId: string; poster?:
   return (
     <MuxVideo
       playbackId={playbackId}
-      poster={poster}
+      poster={poster ?? `https://image.mux.com/${playbackId}/thumbnail.jpg?width=1920`}
+      metadata-video-title="bees-video"
       autoPlay="any"
       muted
       loop

@@ -5,6 +5,7 @@ import { HoneyDirectory } from "@/components/honey-directory";
 import { IMAGES } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/honey" },
   title: "Local Manx Honey",
   description:
     "Buy local Manx honey, cut comb, beeswax and hive products direct from Isle of Man beekeepers, the island list, north to south.",

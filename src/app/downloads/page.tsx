@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion";
 import { DOWNLOADS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/downloads" },
   title: "Downloads",
   description: "Federation documents and Isle of Man beekeeping legislation, constitution, bylaws and the statute book.",
 };

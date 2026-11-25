@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/swarms" },
   title: "Found a Swarm?",
   description:
     "What to do if you see a swarm of honeybees on the Isle of Man, free volunteer collection, April to July.",

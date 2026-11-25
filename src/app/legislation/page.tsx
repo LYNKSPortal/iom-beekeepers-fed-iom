@@ -5,6 +5,7 @@ import { Reveal } from "@/components/motion";
 import { DOWNLOADS } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/legislation" },
   title: "Beekeeping Legislation",
   description:
     "Your legal responsibilities as an Isle of Man beekeeper, the import ban, apiary registration, and the laws protecting our varroa-free bees.",

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { IMAGES, POSTS, formatDate } from "@/lib/data";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/asian-hornets" },
   title: "Asian Hornets",
   description:
     "Vespa velutina, the yellow-legged hornet. How to identify it, why the Isle of Man must stay vigilant, and the latest updates.",
