@@ -1,8 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion, useSpring, useInView, useMotionValue, useTransform } from "motion/react";
+import { motion, animate, useReducedMotion, useSpring, useInView, useMotionValue } from "motion/react";
 import Image from "next/image";
-import { useRef, type ReactNode, type MouseEvent } from "react";
+import { useRef, useState, useEffect, type ReactNode, type MouseEvent } from "react";
 import { cn } from "@/lib/utils";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
@@ -125,19 +125,21 @@ export function Counter({ to, suffix = "", className }: { to: number; suffix?: s
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduce = useReducedMotion();
-  const mv = useSpring(inView ? to : 0, { stiffness: 40, damping: 18 });
-  const rounded = useTransform(mv, (v) => Math.round(v).toLocaleString());
-  if (reduce) {
-    return (
-      <span ref={ref} className={className}>
-        {to.toLocaleString()}
-        {suffix}
-      </span>
-    );
-  }
+  const [display, setDisplay] = useState("0");
+
+  useEffect(() => {
+    if (!inView || reduce) return;
+    const controls = animate(0, to, {
+      duration: 1.6,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setDisplay(Math.round(v).toLocaleString()),
+    });
+    return () => controls.stop();
+  }, [inView, reduce, to]);
+
   return (
     <span ref={ref} className={className}>
-      <motion.span>{rounded}</motion.span>
+      {reduce ? to.toLocaleString() : display}
       {suffix}
     </span>
   );
