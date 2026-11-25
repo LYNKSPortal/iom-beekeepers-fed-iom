@@ -52,7 +52,7 @@ export function SiteNav() {
       <header className="fixed top-0 inset-x-0 z-50">
         <div
           className={cn(
-            "mx-auto flex items-center justify-between gap-4 px-4 sm:px-6 transition-all duration-500",
+            "mx-auto flex items-center justify-between gap-4 transition-all duration-500",
             "max-w-none mt-0"
           )}
         >
@@ -60,8 +60,8 @@ export function SiteNav() {
             className={cn(
               "flex w-full items-center justify-between gap-3 transition-all duration-500",
               scrolled
-                ? "border-b border-ink/10 bg-cream/80 backdrop-blur-xl px-2 sm:px-4 py-2.5"
-                : "px-2 sm:px-4 py-4"
+                ? "border-b border-ink/10 bg-cream/80 backdrop-blur-xl px-6 sm:px-10 py-2.5"
+                : "px-6 sm:px-10 py-4"
             )}
           >
             <Link href="/" className="flex items-center shrink-0 group" aria-label="Isle of Man Beekeepers Federation, home">
@@ -168,7 +168,13 @@ export function SiteNav() {
             className="fixed inset-0 z-[60] bg-forest-2 text-cream flex flex-col"
           >
             <div className="flex items-center justify-between px-6 py-5">
-              <span className="font-display font-semibold text-lg">Menu</span>
+              <Image
+                src="/logo/logo-light.png"
+                alt="Isle of Man Beekeepers Federation"
+                width={3000}
+                height={811}
+                className="h-auto w-[160px]"
+              />
               <Button variant="ghost" size="icon" onClick={() => setMobile(false)} aria-label="Close menu" className="text-cream hover:bg-cream/10">
                 <X className="h-6 w-6" />
               </Button>
@@ -198,9 +204,9 @@ export function SiteNav() {
                     <ArrowUpRight className="h-5 w-5 text-honey" />
                   </Link>
                   {item.children && (
-                    <div className="pb-4 flex flex-wrap gap-x-5 gap-y-1.5">
+                    <div className="pb-4 flex flex-col gap-2.5">
                       {item.children.map((c) => (
-                        <Link key={c.href} href={c.href} className="text-sm text-cream/60 u-sweep">
+                        <Link key={c.href} href={c.href} className="text-sm text-cream/60 u-sweep w-fit">
                           {c.label}
                         </Link>
                       ))}
