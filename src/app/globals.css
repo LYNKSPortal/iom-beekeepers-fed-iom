@@ -1,6 +1,8 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
+:root {
   --color-cream: #f7f3ea;
   --color-cream-2: #efe8d8;
   --color-honey: #d99a1f;
@@ -43,6 +45,18 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: clip;
+}
+
+@supports not (min-height: 100svh) {
+  .min-h-svh {
+    min-height: 100vh;
+  }
+}
+
+@supports not (overflow: clip) {
+  body {
+    overflow-x: hidden;
+  }
 }
 
 ::selection {
@@ -212,7 +226,7 @@ select {
   width: 100%;
   background: transparent;
   border: 0;
-  border-bottom: 1.5px solid color-mix(in srgb, var(--color-ink) 25%, transparent);
+  border-bottom: 1.5px solid rgba(42, 38, 32, 0.25);
   padding: 0.85rem 0;
   font-size: 1rem;
   transition: border-color 0.3s;
@@ -221,7 +235,7 @@ select {
   border-color: var(--color-honey);
 }
 .field::placeholder {
-  color: color-mix(in srgb, var(--color-ink) 40%, transparent);
+  color: rgba(42, 38, 32, 0.4);
 }
 
 .dark-form label > span:first-child {
@@ -229,10 +243,10 @@ select {
 }
 .dark-form .field {
   color: var(--color-cream);
-  border-bottom-color: color-mix(in srgb, var(--color-cream) 30%, transparent);
+  border-bottom-color: rgba(247, 243, 234, 0.3);
 }
 .dark-form .field::placeholder {
-  color: color-mix(in srgb, var(--color-cream) 40%, transparent);
+  color: rgba(247, 243, 234, 0.4);
 }
 .dark-form .field:focus {
   border-bottom-color: var(--color-honey);
@@ -248,7 +262,7 @@ select.field option {
 .article-body {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: color-mix(in srgb, var(--color-ink) 85%, transparent);
+  color: rgba(42, 38, 32, 0.85);
 }
 .article-body p {
   margin-bottom: 1.4em;
@@ -314,7 +328,7 @@ select.field option {
   padding-left: 1.25rem;
   margin: 1.6em 0;
   font-style: italic;
-  color: color-mix(in srgb, var(--color-ink) 70%, transparent);
+  color: rgba(42, 38, 32, 0.7);
 }
 .article-body table {
   width: 100%;
@@ -324,7 +338,7 @@ select.field option {
 }
 .article-body td,
 .article-body th {
-  border-bottom: 1px solid color-mix(in srgb, var(--color-ink) 12%, transparent);
+  border-bottom: 1px solid rgba(42, 38, 32, 0.12);
   padding: 0.6rem 0.75rem;
   text-align: left;
 }
@@ -348,6 +362,6 @@ select.field option {
   background: var(--color-cream);
 }
 ::-webkit-scrollbar-thumb {
-  background: color-mix(in srgb, var(--color-forest) 55%, var(--color-cream));
+  background: #809084;
   border-radius: 8px;
 }

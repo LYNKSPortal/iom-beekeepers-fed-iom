@@ -70,7 +70,7 @@ export function SubmitForm({
         {state === "sent" ? (
           <motion.div
             key="sent"
-            initial={{ opacity: 0, y: 16 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             className="rounded-3xl border border-honey/40 bg-honey/10 p-10 text-center"
           >

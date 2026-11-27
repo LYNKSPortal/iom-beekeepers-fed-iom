@@ -61,7 +61,7 @@ export function HoneyDirectory() {
             <motion.li
               key={p.name}
               layout
-              initial={{ opacity: 0, scale: 0.97 }}
+              initial={false}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.97 }}
               transition={{ duration: 0.3 }}

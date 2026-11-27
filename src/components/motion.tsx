@@ -10,7 +10,6 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 export function Reveal({
   children,
   delay = 0,
-  y = 28,
   className,
   once = true,
 }: {
@@ -24,10 +23,10 @@ export function Reveal({
   return (
     <motion.div
       className={className}
-      initial={reduce ? false : { opacity: 0, y }}
+      initial={false}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once, margin: "-60px" }}
-      transition={{ duration: 0.9, delay, ease: EASE }}
+      transition={{ duration: reduce ? 0 : 0.9, delay, ease: EASE }}
     >
       {children}
     </motion.div>
@@ -56,14 +55,14 @@ export function ImageReveal({
     <div className={cn("relative overflow-hidden", className)} style={ratio ? { aspectRatio: ratio.replace("/", " / ") } : undefined}>
       <motion.div
         className="absolute inset-0"
-        initial={reduce ? false : { clipPath: "inset(0 0 100% 0)" }}
+        initial={false}
         whileInView={{ clipPath: "inset(0 0 0% 0)" }}
         viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 1.2, ease: EASE }}
+        transition={{ duration: reduce ? 0 : 1.2, ease: EASE }}
       >
         <motion.div
           className="absolute inset-0"
-          initial={reduce ? false : { scale: 1.25 }}
+          initial={false}
           whileInView={{ scale: 1 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 1.4, ease: EASE }}
@@ -85,9 +84,9 @@ export function SplitLines({ text, className, as: Tag = "span" }: { text: string
         <span key={i} className="inline-block overflow-hidden align-bottom pb-[0.08em] -mb-[0.08em]">
           <motion.span
             className="inline-block will-change-transform"
-            initial={reduce ? false : { y: "110%" }}
+            initial={false}
             animate={{ y: 0 }}
-            transition={{ duration: 0.9, delay: 0.15 + i * 0.05, ease: EASE }}
+            transition={{ duration: reduce ? 0 : 0.9, delay: 0.15 + i * 0.05, ease: EASE }}
           >
             {w}
             {i < words.length - 1 ? " " : ""}
@@ -125,7 +124,7 @@ export function Counter({ to, suffix = "", className }: { to: number; suffix?: s
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-40px" });
   const reduce = useReducedMotion();
-  const [display, setDisplay] = useState("0");
+  const [display, setDisplay] = useState(to.toLocaleString());
 
   useEffect(() => {
     if (!inView || reduce) return;

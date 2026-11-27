@@ -9,6 +9,7 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { NAV } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { BeeIcon } from "@/components/bee-icon";
 import { Magnetic } from "@/components/motion";
 
 export function SiteNav() {
@@ -110,7 +111,7 @@ export function SiteNav() {
                   <AnimatePresence>
                     {item.children && open === item.label && (
                       <motion.div
-                        initial={reduce ? { opacity: 0 } : { opacity: 0, y: 10, scale: 0.98 }}
+                        initial={false}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 8, scale: 0.98 }}
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
@@ -141,7 +142,7 @@ export function SiteNav() {
             <div className="flex items-center gap-2 shrink-0">
               <Magnetic>
                 <Button asChild variant="honey" size="md" className="hidden sm:inline-flex">
-                  <Link href="/swarms">Found a Swarm?</Link>
+                  <Link href="/swarms"><BeeIcon className="h-4 w-4" />Found a Swarm?</Link>
                 </Button>
               </Magnetic>
               <Button
@@ -161,10 +162,10 @@ export function SiteNav() {
       <AnimatePresence>
         {mobile && (
           <motion.div
-            initial={{ opacity: 0 }}
+            initial={false}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: reduce ? 0 : 0.3 }}
             className="fixed inset-0 z-[60] bg-forest-2 text-cream flex flex-col"
           >
             <div className="flex items-center justify-between px-6 py-5">
@@ -181,7 +182,7 @@ export function SiteNav() {
             </div>
             <nav className="flex-1 overflow-y-auto px-6 pb-10" aria-label="Mobile">
               <motion.div
-                initial={reduce ? false : { opacity: 0, x: -16 }}
+                initial={false}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.05 }}
                 className="border-b border-cream/10"
@@ -194,7 +195,7 @@ export function SiteNav() {
               {NAV.map((item, i) => (
                 <motion.div
                   key={item.label}
-                  initial={reduce ? false : { opacity: 0, x: -16 }}
+                  initial={false}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.05 }}
                   className="border-b border-cream/10"
@@ -217,7 +218,7 @@ export function SiteNav() {
             </nav>
             <div className="px-6 pb-8">
               <Button asChild variant="honey" size="lg" className="w-full">
-                <Link href="/swarms">Found a Swarm?</Link>
+                <Link href="/swarms"><BeeIcon className="h-5 w-5" />Found a Swarm?</Link>
               </Button>
             </div>
           </motion.div>

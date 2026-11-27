@@ -6,6 +6,7 @@ import { Section, SectionHead } from "@/components/page-hero";
 import { Button } from "@/components/ui/button";
 import { ASSOCIATIONS, EVENTS, IMAGES, POSTS, formatDate } from "@/lib/data";
 import { HeroVideo } from "@/components/hero-video";
+import { BeeIcon } from "@/components/bee-icon";
 
 const MUX_PLAYBACK_ID = "RngMMxWgGFOInlnJCRMac9XCUERNRdTFrHhwLHg6eS8";
 
@@ -62,7 +63,7 @@ export default function Home() {
               </Magnetic>
               <Magnetic>
                 <Button asChild variant="outline" size="lg" className="text-cream border-cream/40 hover:bg-cream hover:text-forest-2 hover:border-cream">
-                  <Link href="/swarms">Found a swarm?</Link>
+                  <Link href="/swarms"><BeeIcon className="h-4.5 w-4.5" />Found a swarm?</Link>
                 </Button>
               </Magnetic>
             </div>
@@ -147,7 +148,7 @@ export default function Home() {
             <Magnetic>
               <Button asChild size="lg" className="bg-forest-2 text-cream hover:bg-ink">
                 <Link href="/swarms">
-                  Report a swarm <ArrowRight className="h-4 w-4" />
+                  <BeeIcon className="h-4.5 w-4.5" />Report a swarm <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
             </Magnetic>

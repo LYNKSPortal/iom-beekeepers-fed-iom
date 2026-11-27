@@ -73,7 +73,7 @@ export function NewsArchive({ posts }: { posts: Post[] }) {
             <motion.li
               key={p.slug}
               layout
-              initial={{ opacity: 0, y: 16 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
